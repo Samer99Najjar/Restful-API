@@ -1,6 +1,6 @@
 import {Person} from './Person' ;
 
-class Employee extends Person{
+export class Employee extends Person{
     id: number;
     salary: number;
     constructor(name_: string , age_: number, id_: number, salary_:number){
@@ -17,6 +17,3 @@ class Employee extends Person{
 
 }
 
-let samer = new Employee("samer",23,69,15000);
-samer.work()
-console.log(samer.getSalary());
