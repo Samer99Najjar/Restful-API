@@ -1,17 +1,5 @@
-class Person{
-    name: string;
-    age: number;
-    constructor( name_: string, age_: number){
-        this.name= name_;
-        this.age= age_;
-    }
-    greet(){
-        console.log("Hello i am ," +this.name);
-    }
-    getAge(){   
-        return this.age;
-    }
-}
+import {Person} from './Person' ;
+
 class Employee extends Person{
     id: number;
     salary: number;
@@ -29,3 +17,6 @@ class Employee extends Person{
 
 }
 
+let samer = new Employee("samer",23,69,15000);
+samer.work()
+console.log(samer.getSalary());
