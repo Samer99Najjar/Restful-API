@@ -10,11 +10,13 @@
 ## Installations:
 In order to run the project you need to install this commands:
 > npm i --save-dev @types/node
+
 > npm install express
 
 ## Run Project
 > tcs
-> node index.js
+
+> node app.js
 
 
 At this point you should see that the server started running 
