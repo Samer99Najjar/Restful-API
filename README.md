@@ -1,4 +1,6 @@
 # Restful-API
+![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/sealights-logo.jpg)
+
 ## Task:
 > Create a simple TypeScript class with methods and inheritance, and connect it to an API
 
