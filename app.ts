@@ -4,6 +4,8 @@ import {Employee} from './Employee' ;
 const express = require ('express');
 const app = express();
 
+app.use(express.json());
+
 
 let person1 = new Person("person1",23);
 let person2 = new Person("person2",25);
@@ -20,22 +22,74 @@ let employes_arr= [employee1
 
 app.use(express.json());
 
-app.get('/server' , (req: any,res: { send: (arg0: string) => void; }) => {
+
+// Server is Working msg
+app.get('/' , (req: any,res: any) => {
     res.send('Server is working fine');
 
 });
 
-app.get('/Person',(req: any,res: {
-    [x: string]: any; send: (arg0: number[]) => void; 
-})=>{
-    res.json(person_arr);
-});
+// Get all Persons and print them   
+app.get('/Person',(req: any,res: any)=>{
 
-app.get('/Employee',(req: any,res: {
-    json(employes_arr: Employee[]): unknown; send: (arg0: number[]) => void; 
-})=>{
+    const jsonStr = JSON.stringify(person_arr, null, '\n');
+    res.send(jsonStr);
+    });
+
+
+// Get all employees and print them   
+app.get('/Employee',(req: any,res: any)=>{
     res.json(employes_arr);
 });
+
+
+//Get a specific person by Name 
+app.get('/Person/:name',(req: any,res: any)=>{
+    
+    let person = person_arr.find(c=> c.name ===  req.params.name);
+    if(!person) //404
+    {
+        res.status(404).send('The person with the given name was not found');
+    }
+    else{
+    res.send(person);
+    }
+});
+
+
+//Add Person 
+app.post('/Person',(req:any,res:any)=>{
+
+    if (!req.body.name || req.body.length <3){
+        //400 bad request
+        res.status(400).send("You must enter Name and More than 3 letters");
+        return ;
+    }
+    let new_person = new Person(req.body.name ,25);
+
+    person_arr.push(new_person);
+    res.send(new_person);
+
+});
+//Delete Person
+app.delete('/Person/:name',(req:any,res:any)=>{
+    // look up the person
+    const name = req.params.name;
+    const index = person_arr.findIndex(p => p.name === name);
+    if(index===-1) //404 if not found 
+    {
+        res.status(404).send('The person with the given name was not found');
+    }
+    else{
+        person_arr.splice(index, 1);
+        res.send('Person deleted');
+    }
+ 
+});
+
+
+
+
 
 //PORT
 const port = process.env.PORT || 3000;
