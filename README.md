@@ -6,6 +6,7 @@
 > git clone https://github.com/Samer99Najjar/Restful-API.git
 
 ## Go to the project directory and Open Terminal
+> cd Restful-API
 
 ## Installations:
 In order to run the project you need to install this commands:
