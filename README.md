@@ -25,6 +25,7 @@ At this point you should see that the server started running
 ## Open Postman from google chrome and start: http://localhost:3000
 
 Now you can enter any the commands you want 
+
 # Example
 
 > GET http://localhost:3000/Employee to get all the employees  :
