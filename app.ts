@@ -89,6 +89,53 @@ app.delete('/Person/:name',(req:any,res:any)=>{
 
 
 
+//Get a specific Employee by Name 
+app.get('/Employee/:name',(req: any,res: any)=>{
+    
+    let employe = employes_arr.find(c=> c.name ===  req.params.name);
+    if(!employe) //404
+    {
+        res.status(404).send('The person with the given name was not found');
+    }
+    else{
+    res.send(employe);
+    }
+});
+
+
+//Add Person 
+app.post('/Employee',(req:any,res:any)=>{
+
+    if (!req.body.name || req.body.length <3){
+        //400 bad request
+        res.status(400).send("You must enter Name and More than 3 letters");
+        return ;
+    }
+    
+    let new_employ = new Employee(req.body.name ,employes_arr.length,25,8000);
+
+    employes_arr.push(new_employ);
+    res.send(new_employ);
+
+});
+//Delete Employee
+app.delete('/Employee/:name',(req:any,res:any)=>{
+    // look up the person
+    const name = req.params.name;
+    const index = employes_arr.findIndex(p => p.name === name);
+    if(index===-1) //404 if not found 
+    {
+        res.status(404).send('The person with the given name was not found');
+    }
+    else{
+        employes_arr.splice(index, 1);
+        res.send('Person deleted');
+    }
+ 
+});
+
+
+
 
 
 //PORT
