@@ -17,10 +17,10 @@ Create a simple TypeScript class with methods and inheritance, and connect it to
     ```
     tcs
     ```
-      ```
+    ```
     cd scripts
-      ```
-        ```
+    ```
+    ```
     node app.js
     ```
 
