@@ -24,7 +24,7 @@ Create a simple TypeScript class with methods and inheritance, and connect it to
     cd scripts
     ```
     ```
-    node app.ts
+    nodemon app.ts
     ```
 
     At this point, you should see that the server has started running.
