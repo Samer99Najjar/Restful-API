@@ -2,9 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Person_1 = require("./Person");
 const Employee_1 = require("./Employee");
+const logger_1 = require("./logger");
 const express = require('express');
 const app = express();
 app.use(express.json());
+const logger = logger_1.Logger.getInstance();
+logger.setLogLevel("Debug");
+logger.log("This is a debug message");
 let employee1 = new Employee_1.Employee("employee1", 25, 1, 15000);
 let employee2 = new Employee_1.Employee("employee2", 24, 2, 15000);
 let employee3 = new Employee_1.Employee("employee3", 23, 3, 15000);
@@ -18,11 +22,13 @@ app.get('/', (req, res) => {
 });
 // Get all Persons and print them   
 app.get('/Person', (req, res) => {
+    logger.log("getting all people in the database ");
     const All_Persons = Person_1.Person.getAllPersons();
     res.send(All_Persons);
 });
 // Get all employees and print them   
 app.get('/Employee', (req, res) => {
+    logger.log("getting all employees in the database ");
     let all_employees = Employee_1.Employee.getAllEmployees();
     res.send(all_employees);
 });

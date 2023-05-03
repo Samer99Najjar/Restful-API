@@ -2,11 +2,16 @@ import {Person} from './Person' ;
 import {Employee} from './Employee' ;
 import fs from 'fs';
 import { basename } from 'path';
+import { Logger } from './logger';
 
 const express = require ('express');
 const app = express();
 
 app.use(express.json());
+
+const logger = Logger.getInstance();
+logger.setLogLevel("Debug");
+logger.log("This is a debug message");
 
 
 
@@ -30,7 +35,7 @@ app.get('/' , (req: any,res: any) => {
 
 // Get all Persons and print them   
 app.get('/Person',(req: any,res: any)=>{
-
+    logger.log("getting all people in the database ");
     const All_Persons = Person.getAllPersons();
     res.send(All_Persons);
     });
@@ -38,6 +43,7 @@ app.get('/Person',(req: any,res: any)=>{
 
 // Get all employees and print them   
 app.get('/Employee',(req: any,res: any)=>{
+    logger.log("getting all employees in the database ");
     let all_employees= Employee.getAllEmployees();
     res.send(all_employees);
 });
