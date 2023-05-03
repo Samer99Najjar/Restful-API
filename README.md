@@ -15,6 +15,9 @@ Create a simple TypeScript class with methods and inheritance, and connect it to
     ```
 3. Run the project:
     ```
+    npm i --save-dev @types/node
+    ```
+    ```
     tsc
     ```
     ```
