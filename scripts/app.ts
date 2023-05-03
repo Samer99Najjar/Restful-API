@@ -1,5 +1,7 @@
 import {Person} from './Person' ;
 import {Employee} from './Employee' ;
+import fs from 'fs';
+import { basename } from 'path';
 
 const express = require ('express');
 const app = express();
@@ -7,15 +9,12 @@ const app = express();
 app.use(express.json());
 
 
-let person1 = new Person("person1",23);
-let person2 = new Person("person2",25);
-let person3 = new Person("person3",24);
 
 let employee1 = new Employee("employee1",25,1,15000);
 let employee2 = new Employee("employee2",24,2,15000);
 let employee3 = new Employee("employee3",23,3,15000);
 
-let person_arr=[person1,person2,person3];
+
 let employes_arr= [employee1
     ,employee2
     ,employee3];
@@ -32,21 +31,23 @@ app.get('/' , (req: any,res: any) => {
 // Get all Persons and print them   
 app.get('/Person',(req: any,res: any)=>{
 
-    const jsonStr = JSON.stringify(person_arr, null, '\n');
-    res.send(jsonStr);
+    const All_Persons = Person.getAllPersons();
+    res.send(All_Persons);
     });
 
 
 // Get all employees and print them   
 app.get('/Employee',(req: any,res: any)=>{
-    res.json(employes_arr);
+    let all_employees= Employee.getAllEmployees();
+    res.send(all_employees);
 });
 
 
 //Get a specific person by Name 
 app.get('/Person/:name',(req: any,res: any)=>{
     
-    let person = person_arr.find(c=> c.name ===  req.params.name);
+    let name = req.params.name;
+    let person= Person.SelectPerson(name);
     if(!person) //404
     {
         res.status(404).send('The person with the given name was not found');
@@ -65,9 +66,9 @@ app.post('/Person',(req:any,res:any)=>{
         res.status(400).send("You must enter Name and More than 3 letters");
         return ;
     }
+  
     let new_person = new Person(req.body.name ,25);
-
-    person_arr.push(new_person);
+    Person.addPerson(new_person);
     res.send(new_person);
 
 });
@@ -75,13 +76,12 @@ app.post('/Person',(req:any,res:any)=>{
 app.delete('/Person/:name',(req:any,res:any)=>{
     // look up the person
     const name = req.params.name;
-    const index = person_arr.findIndex(p => p.name === name);
-    if(index===-1) //404 if not found 
+    const result=Person.deletePerson(name);
+    if(result===false) //404 if not found 
     {
         res.status(404).send('The person with the given name was not found');
     }
     else{
-        person_arr.splice(index, 1);
         res.send('Person deleted');
     }
  
@@ -92,7 +92,9 @@ app.delete('/Person/:name',(req:any,res:any)=>{
 //Get a specific Employee by Name 
 app.get('/Employee/:name',(req: any,res: any)=>{
     
-    let employe = employes_arr.find(c=> c.name ===  req.params.name);
+ 
+    let name=req.params.name;
+    let employe= Employee.SelectEmployee(name);
     if(!employe) //404
     {
         res.status(404).send('The person with the given name was not found');
@@ -114,28 +116,27 @@ app.post('/Employee',(req:any,res:any)=>{
     
     let new_employ = new Employee(req.body.name ,employes_arr.length,25,8000);
 
-    employes_arr.push(new_employ);
+    Employee.addEmployee(new_employ);
     res.send(new_employ);
 
 });
+
+
 //Delete Employee
 app.delete('/Employee/:name',(req:any,res:any)=>{
     // look up the person
     const name = req.params.name;
-    const index = employes_arr.findIndex(p => p.name === name);
-    if(index===-1) //404 if not found 
+    const result=Employee.deleteEmployee(name);
+    if(result === false) //404 if not found 
     {
         res.status(404).send('The person with the given name was not found');
     }
     else{
-        employes_arr.splice(index, 1);
+        
         res.send('Person deleted');
     }
  
 });
-
-
-
 
 
 //PORT
