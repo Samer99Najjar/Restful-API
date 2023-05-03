@@ -1,4 +1,5 @@
 import fs from 'fs';
+
 export class Person{
 
     name: string;
@@ -16,7 +17,7 @@ export class Person{
 
 
     // get all the person list from the file person.json
-    static getAllPersons() {
+      static   getAllPersons() {
         const data = fs.readFileSync('./person.json', 'utf8');
         const persons = JSON.parse(data);
         return persons;
@@ -31,7 +32,7 @@ export class Person{
       }
 
       // delete person from file person.json
-      static deletePerson(personname: string):boolean{
+      public static deletePerson(personname: string):boolean{
         let person = this.getAllPersons();
         const index = person.findIndex((p: { name: string; }) => p.name === personname);
         if (index === -1) {
@@ -43,7 +44,7 @@ export class Person{
       }
 
       // select person form the file person.json
-      static SelectPerson(personname: string){
+      public static SelectPerson(personname: string){
         let all_person = this.getAllPersons();
         let person = all_person.find((p: { name: string; })=> p.name === personname);
         return person;

@@ -18,11 +18,25 @@ export class Logger{
         this.level = level;
     }     
 
-
     log(message:string){
-       
-        console.log(message);
-        
+        if(this.level ==="Debug"){
+            console.debug(message);
+        }
+        else{
+            console.log(message);
+        }
+    }
+
+    error(message: string) {
+        console.error(message);
+    }
+
+    warn(message: string) {
+        console.warn(message);
+    }
+
+    info(message: string) {
+        console.info(message);
     }
 
 
