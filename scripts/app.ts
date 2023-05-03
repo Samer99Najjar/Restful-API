@@ -70,7 +70,7 @@ app.post('/Person',(req:any,res:any)=>{
         return ;
     }
   
-    let new_person = new Person(req.body.name ,25);
+    let new_person = new Person(req.body.name ,req.body.age);
     Person.addPerson(new_person);
     res.send(new_person);
 
@@ -124,7 +124,7 @@ app.post('/Employee',(req:any,res:any)=>{
         return ;
     }
     
-    let new_employ = new Employee(req.body.name ,30,25,8000);
+    let new_employ = new Employee(req.body.name ,req.body.id,req.body.age,req.body.salary);
 
     Employee.addEmployee(new_employ);
     res.send(new_employ);
