@@ -12,7 +12,7 @@ export class Logger{
           Logger.instance = new Logger();
         }
         return Logger.instance;
-      }
+    }
     
     public setLogLevel(level: string) {
         this.level = level;

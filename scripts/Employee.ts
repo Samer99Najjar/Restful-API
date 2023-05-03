@@ -1,6 +1,8 @@
 import {Person} from './Person' ;
 import fs from 'fs';
+
 export class Employee extends Person{
+
     id: number;
     salary: number;
     constructor(name_: string , age_: number, id_: number, salary_:number){
