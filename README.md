@@ -15,16 +15,16 @@ Create a simple TypeScript class with methods and inheritance, and connect it to
     ```
 3. Run the project:
     ```
-    npm i --save-dev @types/node
+    npm intall
     ```
     ```
-    tsc
+    npx tsc
     ```
     ```
     cd scripts
     ```
     ```
-    node app.js
+    node app.ts
     ```
 
     At this point, you should see that the server has started running.
