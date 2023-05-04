@@ -49,6 +49,12 @@ Now you can enter any of the commands you want.
 * `GET http://localhost:3000/Employee` to see the updated employee list:
   ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/get_empolyeeafterDeleteAdd.PNG)
   
+* `GET http://localhost:3000/Person` to see the all People list:
+![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/get_empolyeeafterDeleteAdd.PNG)
+  
+  
+  
+  
  * Terminal example :
  
    ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/terminal_pic.PNG)
