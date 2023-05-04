@@ -41,10 +41,14 @@ Now you can enter any of the commands you want.
   ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/get_employeebyname.PNG)
   
 * `POST http://localhost:3000/Employee` then in the body, type the employee name to add a new employee:
-  ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/add_employee.PNG)
+  ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/add_employeenew.PNG)
   
 * `DELETE http://localhost:3000/Employee/employee1` to delete "employee1":
   ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/delete_employee.PNG)
   
 * `GET http://localhost:3000/Employee` to see the updated employee list:
   ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/get_empolyeeafterDeleteAdd.PNG)
+  
+ * Terminal example :
+ ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/terminal_pic.PNG)
+ 
