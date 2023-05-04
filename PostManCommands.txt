@@ -1,0 +1,25 @@
+PostMan commands :
+
+
+Get http://localhost:3000 -- Check that the server is working
+
+All of the Person Commands are :
+
+Get http://localhost:3000/Person -- List of all people in the database
+
+Get http://localhost:3000/Person/*name* -- Gets a single person by name 
+
+Post http://localhost:3000/Person -- Add a single person to the database  follow the examaple posted in readme
+
+Delete http://localhost:3000/Person/*name* -- delete the person with this name  
+
+
+All of the Employee Commands are :
+
+Get http://localhost:3000/Employee -- List of all employees in the database
+
+Get http://localhost:3000/Employee/*name* -- Gets a single employee by name 
+
+Post http://localhost:3000/employee -- Add a single emplotee to the database  follow the examaple posted in readme
+
+Delete http://localhost:3000/Employee/*name* -- delete the employee with this name  
