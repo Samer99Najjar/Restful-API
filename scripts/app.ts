@@ -124,7 +124,7 @@ app.post('/Employee',(req:any,res:any)=>{
         return ;
     }
     
-    let new_employ = new Employee(req.body.name ,req.body.id,req.body.age,req.body.salary);
+    let new_employ = new Employee(req.body.name ,req.body.age,req.body.id,req.body.salary);
 
     Employee.addEmployee(new_employ);
     res.send(new_employ);
