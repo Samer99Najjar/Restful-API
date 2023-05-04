@@ -20,6 +20,8 @@ The data of employees and people are saved in files person.json and employee.jso
 
 The data is read from this files and when changed it is also changed in the files in order to have Data Persistence.  
 
+## Commands
+All the Postman commands are written in a txt file named PostManCommands you can check them there and see the examples down in the examples section
 
 ## Run Locally
 1. Clone the repository:
