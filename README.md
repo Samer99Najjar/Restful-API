@@ -50,5 +50,5 @@ Now you can enter any of the commands you want.
   ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/get_empolyeeafterDeleteAdd.PNG)
   
  * Terminal example :
- ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/terminal_pic.PNG)
+   ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/terminal_pic.PNG)
  
