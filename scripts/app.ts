@@ -123,7 +123,7 @@ app.post('/Employee',(req:any,res:any)=>{
         res.status(400).send("You must enter Name and More than 3 letters");
         return ;
     }
-    
+     
     let new_employ = new Employee(req.body.name ,req.body.age,req.body.id,req.body.salary);
 
     Employee.addEmployee(new_employ);
