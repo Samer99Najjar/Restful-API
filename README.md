@@ -1,21 +1,21 @@
 # Restful-API
 ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/sealights-logo.jpg)
 
-## Task:
+## Task
 Create a simple TypeScript class with methods and inheritance, and connect it to an API.
 
-## Classes :
+## Classes 
 The classes used in the Project are Person class which have 2 attributes age and name , and Class Employee that is inherits from Person and have
 extra 2 attributes that are Salary and ID , And a logger class .
 
-## Design Patterns:
+## Design Patterns
 In this Task I used the Design Pattern Singelton implemented in the class Logger, since it's only make sense to have one logger in the App.
 
 So by using the singleton and making the constructor private i limited the number of instances of that class to only 1.
 
 And that logger is responsible for making messages when event happens.
 
-## Data :
+## Data 
 The data of employees and people are saved in files person.json and employee.json found in the scripts library.
 
 The data is read from this files and when changed it is also changed in the files in order to have Data Persistence.  
