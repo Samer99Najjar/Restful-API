@@ -34,7 +34,7 @@ All the Postman commands are written in a txt file named PostManCommands you can
     ```
 3. Run the project:
     ```
-    npm intall
+    npm install
     ```
     ```
     npx tsc
