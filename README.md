@@ -50,8 +50,13 @@ Now you can enter any of the commands you want.
   ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/get_empolyeeafterDeleteAdd.PNG)
   
 * `GET http://localhost:3000/Person` to see the all People list:
-![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/get_empolyeeafterDeleteAdd.PNG)
+![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/getallperson.PNG)
+
+* `POST http://localhost:3000/Person` then in the body, type the person name and age to add a new person:
+  ![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/addPerson.PNG)
   
+* `GET http://localhost:3000/Person` to see the all People list updated:
+![alt text](https://github.com/Samer99Najjar/Restful-API/blob/main/pics/getallperson2.PNG)
   
   
   
